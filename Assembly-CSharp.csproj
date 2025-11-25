@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\PotManager.cs" />
     <Compile Include="Assets\Scripts\IngredientsAndOtherCls.cs" />
     <Reference Include="UnityEngine">
       <HintPath>F:\unity\2022.3.17f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

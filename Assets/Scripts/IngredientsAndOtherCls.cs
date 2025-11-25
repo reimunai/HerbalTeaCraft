@@ -113,7 +113,7 @@ public class BrewingPot
             return;
         
         //quality boil 进度条上升斜率
-        float qualityK = 0.85f;
+        float qualityK = temperature * 0.85f / 200f;
         float boilK = temperature * maxBoilIncrementK / 200f;
         
         
