@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{badd61ce-3907-1309-01da-f543bc6fa453}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator", "Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj", "{6c1d2505-7a3c-7345-d689-ad27c0514597}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.StarterAssets", "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj", "{bc8c5a28-c0d5-7880-7729-1160364121dd}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{badd61ce-3907-1309-01da-f543bc6fa453}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{74010e43-d76e-7e19-30bc-d7e96f5a2949}"
 EndProject
@@ -16,12 +16,12 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{badd61ce-3907-1309-01da-f543bc6fa453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{badd61ce-3907-1309-01da-f543bc6fa453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6c1d2505-7a3c-7345-d689-ad27c0514597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6c1d2505-7a3c-7345-d689-ad27c0514597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{bc8c5a28-c0d5-7880-7729-1160364121dd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{bc8c5a28-c0d5-7880-7729-1160364121dd}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{badd61ce-3907-1309-01da-f543bc6fa453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{badd61ce-3907-1309-01da-f543bc6fa453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74010e43-d76e-7e19-30bc-d7e96f5a2949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{74010e43-d76e-7e19-30bc-d7e96f5a2949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81de014a-0f2a-192b-1a95-7554005ef5f9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

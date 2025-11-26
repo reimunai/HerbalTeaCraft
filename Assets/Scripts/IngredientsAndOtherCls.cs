@@ -106,6 +106,14 @@ public class BrewingPot
     public void AdjustTemperature(float temperature)
     {
         this.temperature = temperature;
+        if (this.temperature < 0f)
+        {
+            this.temperature = 0f;
+        }
+        else if (this.temperature > 200f)
+        {
+            this.temperature = 200f;
+        }
     }
     public void UpdateQualityColor(float deltaTime)
     {
@@ -114,15 +122,7 @@ public class BrewingPot
         
         //quality boil 进度条上升斜率
         float qualityK = temperature * 0.85f / 200f;
-
-
-
-
-
-
-
         float boilK = temperature * maxBoilIncrementK / 200f;
-        
         
         timer += deltaTime;
         boilLevel += boilK * deltaTime / costTime;
