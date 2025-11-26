@@ -11,6 +11,8 @@ public class WindBoxGrabInteractor : XRGrabInteractable
     [SerializeField]private float ZMaxLimit = -1f;
     [SerializeField]private bool isGrabbed = false;
 
+    public Ingredient i1;
+
     private float _prePosZ;
     private Transform _windBoxHandleTransform;
     private Vector3 _originalPos;
@@ -18,6 +20,7 @@ public class WindBoxGrabInteractor : XRGrabInteractable
 
     private void Start()
     {
+        Debug.Log(i1.name+" " + i1.tags);
         _prePosZ = transform.localPosition.z;
         _originalPos = transform.localPosition;
         _parentTransform = transform.parent.transform;
@@ -62,7 +65,6 @@ public class WindBoxGrabInteractor : XRGrabInteractable
             {
                 pullSpeed = (transform.localPosition.z - _prePosZ) / Time.deltaTime;
             }
-            Debug.Log(pullSpeed);
             _prePosZ = transform.localPosition.z;
         }
     }

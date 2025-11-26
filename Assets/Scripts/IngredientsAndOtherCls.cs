@@ -6,20 +6,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-//配料
-[CreateAssetMenu(menuName = "HerbalTeaSO/Ingredient", fileName = "Ingredient")]
-public class Ingredient : ScriptableObject
-{
-    public string ingredientName;
-    public string[] tags;
-
-    public Ingredient(string name)
-    {
-        ingredientName = name;
-    }
-}
-
-[Serializable]
 public class BrewingPot
 {
     [Header("锅中混合物实时属性")]
@@ -166,21 +152,6 @@ public class BrewingPot
     public float GetBestWaterLevel()
     {
         return capacity / maxCapacity;
-    }
-}
-[Serializable]
-[CreateAssetMenu(menuName = "HerbalTeaSO/HerbalTeaRecipe", fileName = "HerbalTeaRecipe")]
-public class HerbalTeaRecipe : ScriptableObject
-{
-    public string herbalTeaName;
-    public List<IngredientsAndWeighs> ingredientsAndWeighs;
-    public float qualityColor = 0;
-    
-    
-    //成品评分
-    public float Evaluate(BrewingPot pot)
-    {
-        return 100f;
     }
 }
 
