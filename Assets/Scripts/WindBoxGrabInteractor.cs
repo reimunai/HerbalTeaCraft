@@ -11,16 +11,13 @@ public class WindBoxGrabInteractor : XRGrabInteractable
     [SerializeField]private float ZMaxLimit = -1f;
     [SerializeField]private bool isGrabbed = false;
 
-    public Ingredient i1;
-
     private float _prePosZ;
     private Transform _windBoxHandleTransform;
     private Vector3 _originalPos;
-    private Transform _parentTransform;
+    [SerializeField]private Transform _parentTransform;
 
     private void Start()
     {
-        Debug.Log(i1.name+" " + i1.tags);
         _prePosZ = transform.localPosition.z;
         _originalPos = transform.localPosition;
         _parentTransform = transform.parent.transform;
@@ -30,6 +27,7 @@ public class WindBoxGrabInteractor : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
+        Debug.Log("aaaaa");
         isGrabbed = true;
         transform.SetParent(_parentTransform);
     }

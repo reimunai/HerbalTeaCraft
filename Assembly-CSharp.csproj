@@ -52,6 +52,7 @@
     <Compile Include="Assets\Scripts\HUDControlTest.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\PotManager.cs" />
+    <Compile Include="Assets\Scripts\WaterTapControl.cs" />
     <Compile Include="Assets\Scripts\SocketManager.cs" />
     <Compile Include="Assets\Scripts\WindBoxControl.cs" />
     <Compile Include="Assets\Scripts\WindBoxGrabInteractor.cs" />
