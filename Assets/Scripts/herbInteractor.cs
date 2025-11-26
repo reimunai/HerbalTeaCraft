@@ -20,7 +20,11 @@ public class herbInteractor : XRGrabInteractable
         base.OnSelectExited(args);
         if (!isInSocket)
         {
-            transform.position = originTransform;
+            Transport();
         }
+    }
+    public void Transport() 
+    {
+        transform.position = originTransform;
     }
 }

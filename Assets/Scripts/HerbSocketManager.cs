@@ -8,15 +8,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SocketManager : MonoBehaviour
 {
     public List<XRSocketInteractor> sockets;
-
     public string IngredientName = null;
-   
     public float totalWeight = 0f;
 
     private List<Transform> objInSocket=new List<Transform>();
+    private Vector3 orginPosition;
     
     private void Start()
     {
+        orginPosition = transform.position;
         foreach (var socket in sockets)
         {
             socket.selectEntered.AddListener(OnInserted);
@@ -95,8 +95,6 @@ public class SocketManager : MonoBehaviour
         {
             objInSocket[objInSocket.Count - 1].GetComponent<Collider>().enabled = true;
         }
-        ////‹≥“∆≥˝ ±¡Ó‹≥πÈŒª
-        //obj.transform.position = herb.originTransform;
 
 
         //»ÙŒﬁ‹≥£¨ ˝æ›πÈ¡„
@@ -110,5 +108,20 @@ public class SocketManager : MonoBehaviour
         IngredientName = null;
         totalWeight = 0;
         Debug.Log("nothing is now");
+    }
+
+    public void ReleaseAllSocket() 
+    {
+        foreach (var socket in sockets)
+        {
+            var obj = socket.firstInteractableSelected;
+            socket.interactionManager.SelectExit(socket, obj);
+            obj.transform.gameObject.GetComponent<herbInteractor>().Transport();
+        }
+    }
+
+    public void Transport()
+    {
+        transform.position = orginPosition;
     }
 }
