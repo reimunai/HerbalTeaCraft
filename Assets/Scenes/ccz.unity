@@ -8326,6 +8326,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2686274873355350086, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686274873355350086, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686274873355350086, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3696759743961129834, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8386,6 +8401,21 @@ PrefabInstance:
       propertyPath: onPotQualityColorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 971081484}
+    - target: {fileID: 4834682854233878900, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834682854233878900, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.349
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834682854233878900, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 5284562601689533849, guid: 3ed4ee06d8475b046a94b708b00b0aa5,
         type: 3}
       propertyPath: m_Name

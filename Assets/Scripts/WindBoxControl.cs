@@ -20,6 +20,7 @@ public class WindBoxControl : MonoBehaviour
     
     public UnityEvent<float> onPotTemperatureChanged = new UnityEvent<float>();
     public UnityEvent<float> onPotQualityColorChanged = new UnityEvent<float>();
+    public UnityEvent onCookingEnded = new UnityEvent();
     
     private void Start()
     {
@@ -75,6 +76,8 @@ public class WindBoxControl : MonoBehaviour
         {
             potManager.windBox = null;
             potManager.pot.isHeating = false;
+            potManager.pot.timer = 0f;
+            onCookingEnded?.Invoke();
             potManager = null;
         }
     }

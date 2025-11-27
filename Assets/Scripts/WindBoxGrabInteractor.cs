@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-
+using UnityEngine.Events;
 public class WindBoxGrabInteractor : XRGrabInteractable
 {
     public float pullSpeed = 0f;
     [SerializeField]private float ZMinLimit = 0f;
     [SerializeField]private float ZMaxLimit = -1f;
     [SerializeField]private bool isGrabbed = false;
-
+    
     private float _prePosZ;
     private Transform _windBoxHandleTransform;
     private Vector3 _originalPos;
@@ -44,14 +44,14 @@ public class WindBoxGrabInteractor : XRGrabInteractable
         if (isGrabbed)
         {
             transform.localPosition = new Vector3(_originalPos.x, _originalPos.y, transform.localPosition.z);
-            if (transform.localPosition.z < _originalPos.z + ZMaxLimit)
+            if (transform.localPosition.z > ZMaxLimit)
             {
-                transform.localPosition = new Vector3(_originalPos.x, _originalPos.y, ZMaxLimit + _originalPos.z);
+                transform.localPosition = new Vector3(_originalPos.x, _originalPos.y, ZMaxLimit);
 
             }
-            else if (transform.localPosition.z > _originalPos.z - ZMinLimit)
+            else if (transform.localPosition.z < ZMinLimit)
             {
-                transform.localPosition = new Vector3(_originalPos.x, _originalPos.y, ZMinLimit - _originalPos.z);
+                transform.localPosition = new Vector3(_originalPos.x, _originalPos.y, ZMinLimit);
             }
             //z轴向内部
             float deltaZ = transform.localPosition.z - _prePosZ;
