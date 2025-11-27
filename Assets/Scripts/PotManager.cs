@@ -59,4 +59,6 @@ public class PotManager : MonoBehaviour
         
         _meshRenderer.material.color = color;
     }
+    
+    
 }

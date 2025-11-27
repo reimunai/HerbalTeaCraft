@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ScaleManager : MonoBehaviour
 {
+    public PotManager potManager;
     public List<Ingredient> defaultIngredients=new List<Ingredient>();
     public XRSocketInteractor Self;
     public Ingredient Ingredient;
@@ -47,7 +48,9 @@ public class ScaleManager : MonoBehaviour
             Self.interactionManager.SelectExit(Self, arg0.interactableObject);
             totalHerb.ResetAll();
             StartCoroutine(Reable(Self));
-              
+            
+            potManager.pot.AddIngredient(GetIngredient(), GetWeight());
+            ClearScale();
             return;
             
         }
