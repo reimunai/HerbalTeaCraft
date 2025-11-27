@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-
 public class WindBoxControl : MonoBehaviour
 {
     [SerializeField] private XRSocketInteractor potSocker;
@@ -17,6 +16,8 @@ public class WindBoxControl : MonoBehaviour
     [SerializeField] private XRSimpleInteractable startHeatingBtn;
     
     [SerializeField] private XRSimpleInteractable coolingBtn;
+    
+    public HUDControl HUDControl;
     
     public UnityEvent<float> onPotTemperatureChanged = new UnityEvent<float>();
     public UnityEvent<float> onPotQualityColorChanged = new UnityEvent<float>();
@@ -53,8 +54,18 @@ public class WindBoxControl : MonoBehaviour
             Debug.Log("No Pot for Heating");
             return;
         }
-        
-        potManager.OnStartHeatingBtn();
+
+        if (!potManager.pot.isHeating)
+        {
+            HUDControl.ShowStepGrade(4);
+            potManager.OnStartHeatingBtn();
+        }
+        else
+        {
+            potManager.pot.isHeating = false;
+            potManager.pot.timer = 0f;
+            onCookingEnded?.Invoke();
+        }
     }
     
     

@@ -61,7 +61,7 @@ public class WindBoxGrabInteractor : XRGrabInteractable
             }
             else
             {
-                pullSpeed = (transform.localPosition.z - _prePosZ) / Time.deltaTime;
+                pullSpeed = (transform.localPosition.z - _prePosZ) * 5f / Time.deltaTime;
             }
             _prePosZ = transform.localPosition.z;
         }
