@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc27e15cd17bcec49867de494f43dfa4, type: 3}
-  m_Name: "\u914D\u65B91"
+  m_Name: "\u914D\u65B92"
   m_EditorClassIdentifier: 
-  herbalTeaName: "\u83CA\u82B1\u8336"
+  herbalTeaName: "\u7B54\u8FA9"
   ingredientsAndWeighs:
-  - ingredient: {fileID: 11400000, guid: 1e512e177ea9945499ad900962a943fe, type: 2}
+  - ingredient: {fileID: 11400000, guid: f1f331adacfbdb644b06ee3753efa7cb, type: 2}
     weight: 10
+  - ingredient: {fileID: 11400000, guid: 1e512e177ea9945499ad900962a943fe, type: 2}
+    weight: 5
   qualityColor: 0

@@ -23,7 +23,7 @@ public class CalculateSimilarity : MonoBehaviour
         foreach (var HerbalTeaRecipe in allHerbalTeaRecipe)
         {
             if(HerbalTeaRecipe != null)
-            Debug.Log("添加配方" + HerbalTeaRecipe.name);
+            Debug.Log("添加配方" + HerbalTeaRecipe.herbalTeaName);
             AddToDictonaryList(HerbalTeaRecipe);
         }
     }
@@ -38,7 +38,7 @@ public class CalculateSimilarity : MonoBehaviour
                 if (ingredientNweight.ingredient == null || ingredientNweight.weight <= 0f)
                     continue;
                 temp.Add(ingredientNweight.ingredient, ingredientNweight.weight);
-                Debug.Log("配方里有"+ingredientNweight.ingredient.ingredientName+"重量为"+ ingredientNweight.weight);
+                Debug.Log("配方里有 "+ingredientNweight.ingredient.ingredientName+" 重量为 "+ ingredientNweight.weight);
             }
             standards.Add(temp);
             Debug.Log("Standards里有 Keys: " + string.Join(", ", temp.Keys) + " 和 Values: " + string.Join(", ", temp.Values));
