@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class BaseScaleInteractor : XRGrabInteractable
+public class BaseGrabInteractor : XRGrabInteractable
 {
     public SocketManager SocketManager;
 

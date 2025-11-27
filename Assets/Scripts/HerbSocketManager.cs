@@ -13,7 +13,11 @@ public class SocketManager : MonoBehaviour
 
     private List<Transform> objInSocket=new List<Transform>();
     private Vector3 orginPosition;
-    
+    private IEnumerator Reable(XRSocketInteractor socket)
+    {
+        yield return new WaitForSeconds(2);
+        socket.allowSelect = true;
+    }
     private void Start()
     {
         orginPosition = transform.position;
@@ -28,7 +32,7 @@ public class SocketManager : MonoBehaviour
         var objTransform = arg0.interactableObject.transform;
         var herb = objTransform.GetComponent<herbInteractor>();
 
-        herb.isInSocket = true;
+
 
         if (IngredientName != null)
         {
@@ -37,13 +41,11 @@ public class SocketManager : MonoBehaviour
                 if (!objInSocket.Contains(objTransform))
                 {
                     objInSocket.Add(objTransform);
-               
                     objTransform.GetComponent<Collider>().enabled = false;
-                    
                     totalWeight += herb.weight;
                 }
                 //让上一个物体不可抓，仅最后一个物体可抓
-                Debug.Log(objInSocket.Count+" in times ");
+               // Debug.Log(objInSocket.Count+" in times ");
                 if (objInSocket.Count >= 1)
                 {
                     objInSocket[objInSocket.Count - 1].GetComponent<Collider>().enabled = true;
@@ -70,7 +72,7 @@ public class SocketManager : MonoBehaviour
             objInSocket.Add(objTransform);
             totalWeight += herb.weight;
            
-            Debug.Log(herb.IngredientName+" is now");
+            //Debug.Log(herb.IngredientName+" is now");
         }
     }
     private void OnRemoved(SelectExitEventArgs arg0)
@@ -79,18 +81,18 @@ public class SocketManager : MonoBehaviour
         var obj = arg0.interactableObject.transform.gameObject;
         var herb = objTransform.GetComponent<herbInteractor>();
 
-        herb.isInSocket = false;
+        Debug.Log("Unselected");
+       
 
         if (objInSocket.Contains(objTransform))
         {
-            Debug.Log("leave");
             objInSocket.Remove(objTransform);
             
             objTransform.GetComponent<Collider>().enabled = true;
             totalWeight -= herb.weight;
             
         }
-        Debug.Log(objInSocket.Count + " out times ");
+        //Debug.Log(objInSocket.Count + " out times ");
         if (objInSocket.Count >= 1)
         {
             objInSocket[objInSocket.Count - 1].GetComponent<Collider>().enabled = true;
@@ -112,16 +114,36 @@ public class SocketManager : MonoBehaviour
 
     public void ReleaseAllSocket() 
     {
-        foreach (var socket in sockets)
+        if (sockets != null)
         {
-            var obj = socket.firstInteractableSelected;
-            socket.interactionManager.SelectExit(socket, obj);
-            obj.transform.gameObject.GetComponent<herbInteractor>().Transport();
+            foreach (var socket in sockets)
+                socket.allowSelect = false;
+            foreach (var socket in sockets)
+            {
+                if (socket.hasSelection)
+                {
+                    var obj = socket.firstInteractableSelected;
+                    var herb = obj.transform.GetComponent<herbInteractor>();
+                    
+
+                    herb.Transport();
+
+                    socket.interactionManager.SelectExit(socket, obj);
+                    
+                   
+                    Debug.Log("Transport");
+                }
+            }
+            foreach (var socket in sockets)
+                StartCoroutine(Reable(socket));
         }
     }
-
-    public void Transport()
+ 
+    public void ResetAll()
     {
         transform.position = orginPosition;
+        ReleaseAllSocket();
     }
+
+    public float GetWeight() {  return totalWeight; }
 }
