@@ -2,20 +2,46 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class WaterTapControl : MonoBehaviour
 {
+    [Header("引导相关参数")] 
+    [SerializeField] private bool isNewPlay;
+    [SerializeField] private int stepAfterAddWater;
+    [SerializeField] private HUDControl hudControl;
+    
+    [Header("WaterTap")]
     // Start is called before the first frame update
     [SerializeField] private PotManager potManager;
     [SerializeField] private XRSocketInteractor potSocker;
+    [SerializeField] private XRSimpleInteractable tap;
     
-    [SerializeField]private bool isTapOpen = false;
+    [SerializeField] private WaterTapVisualManager waterTapVisualManager;
+    
+    public bool isTapOpen = false;
     [SerializeField]private float waterFlowSpeed = 0.05f;
+    
+    [SerializeField] public UnityEvent<float> OnWaterAdd = new UnityEvent<float>();
     void Start()
     {
         potSocker.selectEntered?.AddListener(OnPotSockerEntered);
         potSocker.selectExited?.AddListener(OnPotSockerEixted);
+        tap.selectEntered?.AddListener(OnTapWaterTap);
+    }
+
+    private void OnTapWaterTap(SelectEnterEventArgs arg0)
+    {
+        Debug.Log("Tap water");
+        if (!isNewPlay)
+        {
+            hudControl.ShowStepGrade(stepAfterAddWater);
+            isNewPlay = false;
+        }
+        isTapOpen = !isTapOpen;
+        waterTapVisualManager.PlayOrStop(isTapOpen);
     }
 
     private void Update()
@@ -25,6 +51,7 @@ public class WaterTapControl : MonoBehaviour
             if (potManager)
             {
                 potManager.pot.AddWater(waterFlowSpeed * Time.deltaTime);
+                OnWaterAdd?.Invoke(potManager.pot.waterLevel);
             }
         }
     }
@@ -35,6 +62,7 @@ public class WaterTapControl : MonoBehaviour
         if (potM)
         {
             potManager = potM;
+            OnWaterAdd?.Invoke(potManager.pot.waterLevel);
         }
     }
 
@@ -44,6 +72,7 @@ public class WaterTapControl : MonoBehaviour
         if (potManager)
         {
             potManager = null;
+            OnWaterAdd?.Invoke(0f);
         }
     }
     

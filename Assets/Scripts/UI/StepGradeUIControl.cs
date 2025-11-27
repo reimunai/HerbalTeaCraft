@@ -7,14 +7,8 @@ using UnityEngine;
 public class StepGradeUIControl : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public float aliveTime;
+    public float aliveTimePerChar = 0.2f;
     public List<string> stepsGradeInfo = new List<string>();
-
-    private void Start()
-    {
-        ShowStepGradeUIInfo(0);
-        
-    }
 
     public void ShowStepGradeUIInfo(int step)
     {
@@ -23,12 +17,25 @@ public class StepGradeUIControl : MonoBehaviour
             return;
         }
         text.text = stepsGradeInfo[step];
-        StartCoroutine(HideStepGradeUI());
+        StartCoroutine(HideStepGradeUI(stepsGradeInfo[step].Length * aliveTimePerChar));
     }
 
-    IEnumerator HideStepGradeUI()
+    public IEnumerator ShowStepGrageUIInfoMultiply(int[] steps)
     {
-        yield return new WaitForSeconds(aliveTime);
+        foreach (var s in steps)
+        {
+            if (s < 0 || s >= steps.Length)
+            {
+                continue;
+            }
+
+            text.text = stepsGradeInfo[s];
+            yield return StartCoroutine(HideStepGradeUI(stepsGradeInfo[s].Length * aliveTimePerChar));
+        }
+    }
+    public IEnumerator HideStepGradeUI(float t)
+    {
+        yield return new WaitForSeconds(t);
         text.text = "";
     }
 }

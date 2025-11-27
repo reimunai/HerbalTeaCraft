@@ -9,11 +9,18 @@ public class HUDControl : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMP_Text text;
+    public HerbalTeaRecipe startRecipe;
     public HerbalInfoUI herbalInfo;
     public StepGradeUIControl gradeControl;
     private void Awake()
     {
         text.enabled = false;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(gradeControl.ShowStepGrageUIInfoMultiply(new int[] { 0, 1 }));
+        
     }
 
     public void ShowStepGrade(int stepNumber)

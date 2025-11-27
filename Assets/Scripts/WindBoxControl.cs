@@ -1,12 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class WindBoxControl : MonoBehaviour
 {
+    [Header("引导相关参数")]
+    [SerializeField] private bool isNewPlay = false;
+    
+    [SerializeField] private int stepAfterPutPot;
+    [SerializeField] private int stepAfterHeating;
+    [SerializeField] private int bestTimeStep;
+    [SerializeField] private int stepAfterEndCook;
+    
+    [SerializeField] public HUDControl hudControl;
+    [Header("相关组件")]
     [SerializeField] private XRSocketInteractor potSocker;
 
     [SerializeField] private WindBoxGrabInteractor windBoxHandle;
@@ -17,7 +29,7 @@ public class WindBoxControl : MonoBehaviour
     
     [SerializeField] private XRSimpleInteractable coolingBtn;
     
-    public HUDControl HUDControl;
+    
     
     public UnityEvent<float> onPotTemperatureChanged = new UnityEvent<float>();
     public UnityEvent<float> onPotQualityColorChanged = new UnityEvent<float>();
@@ -47,6 +59,14 @@ public class WindBoxControl : MonoBehaviour
         potManager.OnCoolingTemperture();
     }
 
+    private void OnQualityCOlorBest(float value)
+    {
+        if (value > 0.9f && !isNewPlay)
+        {
+            hudControl.ShowStepGrade(bestTimeStep);
+        }
+    }
+    
     private void OnStartHeatingBtn(SelectEnterEventArgs arg0)
     {
         if (!potManager)
@@ -57,7 +77,11 @@ public class WindBoxControl : MonoBehaviour
 
         if (!potManager.pot.isHeating)
         {
-            HUDControl.ShowStepGrade(4);
+            if (!isNewPlay)
+            {
+                hudControl.ShowStepGrade(stepAfterHeating);
+            }
+
             potManager.OnStartHeatingBtn();
         }
         else
@@ -77,6 +101,10 @@ public class WindBoxControl : MonoBehaviour
         {
             potManager = potM;
             potManager.windBox = windBoxHandle;
+            if (!isNewPlay)
+            {
+                hudControl.ShowStepGrade(stepAfterPutPot);
+            }
         }
     }
 
@@ -85,6 +113,11 @@ public class WindBoxControl : MonoBehaviour
         Debug.Log(args.interactableObject.transform.name);
         if (potManager)
         {
+            if (!isNewPlay)
+            {
+                hudControl.ShowStepGrade(stepAfterEndCook);
+                isNewPlay = true;
+            }
             potManager.windBox = null;
             potManager.pot.isHeating = false;
             potManager.pot.timer = 0f;

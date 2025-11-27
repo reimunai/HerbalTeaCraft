@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\HerbSocketManager.cs" />
     <Compile Include="Assets\Scripts\UI\HUDControl.cs" />
     <Compile Include="Assets\Scripts\WindBoxGrabInteractor.cs" />
+    <Compile Include="Assets\Scripts\WaterTapVisualManager.cs" />
     <Compile Include="Assets\Scripts\UI\CustomProgressBar.cs" />
     <Compile Include="Assets\Scripts\IngredientsAndOtherCls.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
