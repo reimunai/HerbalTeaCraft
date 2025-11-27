@@ -34,7 +34,7 @@ public class WindBoxControl : MonoBehaviour
         if (potManager && potManager.pot.isHeating)
         {
             onPotTemperatureChanged?.Invoke(potManager.pot.temperature);
-            onPotQualityColorChanged?.Invoke(potManager.pot.qualityColor / 2f);
+            onPotQualityColorChanged?.Invoke(potManager.pot.qualityColor);
         }
     }
 
