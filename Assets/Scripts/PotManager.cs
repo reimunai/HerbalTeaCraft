@@ -12,6 +12,7 @@ public class PotManager : MonoBehaviour
     
     private MeshRenderer _meshRenderer;
     
+    public Color visualColor = Color.white;
     public BrewingPot pot;
     public float potTemperatureDecreseSpeed = 5f;
     public WindBoxGrabInteractor windBox;
@@ -46,18 +47,18 @@ public class PotManager : MonoBehaviour
     
     public void ChangePotColor()
     {
-        Color color = normalColor;
+        visualColor = normalColor;
         if (pot.qualityColor <= 1)
         {
-            color = UnityEngine.Color.Lerp(normalColor, bestColor, pot.qualityColor);
+            visualColor = UnityEngine.Color.Lerp(normalColor, bestColor, pot.qualityColor);
         }
         else
         {
             var t = pot.qualityColor - 1f;
-            color = Color.Lerp(bestColor, overFireColor, t);
+            visualColor = Color.Lerp(bestColor, overFireColor, t);
         }
         
-        _meshRenderer.material.color = color;
+        _meshRenderer.material.color = visualColor;
     }
     
     

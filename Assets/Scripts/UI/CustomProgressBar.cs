@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomProgressBar : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CustomProgressBar : MonoBehaviour
     [SerializeField] private float maxValue = 100f;
     [SerializeField]private RectTransform rectTransform;
     [SerializeField]private RectTransform progressBar;
+    [SerializeField]private Image fillImage;
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -19,5 +21,10 @@ public class CustomProgressBar : MonoBehaviour
     {
         var height = rectTransform.sizeDelta.y * (progress - minValue) / (maxValue - minValue);
         progressBar.sizeDelta = new Vector2(progressBar.sizeDelta.x, height);
+    }
+
+    public void ColorChange(Color color)
+    {
+        fillImage.color = color;
     }
 }

@@ -204,3 +204,4 @@ MonoBehaviour:
   maxValue: 2
   rectTransform: {fileID: 2700088385886964452}
   progressBar: {fileID: 6979231740838664246}
+  fillImage: {fileID: 1745811677125358881}
