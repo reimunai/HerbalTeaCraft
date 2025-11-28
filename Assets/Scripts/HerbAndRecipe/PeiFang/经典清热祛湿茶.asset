@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc27e15cd17bcec49867de494f43dfa4, type: 3}
+  m_Name: "\u7ECF\u5178\u6E05\u70ED\u795B\u6E7F\u8336"
+  m_EditorClassIdentifier: 
+  herbalTeaName: "\u7ECF\u5178\u6E05\u70ED\u795B\u6E7F\u8336"
+  ingredientsAndWeighs:
+  - ingredient: {fileID: 11400000, guid: ee274d0d57e1de44baf2a7ed18776816, type: 2}
+    weight: 8
+  - ingredient: {fileID: 11400000, guid: 29ed6b14f709a2e4e87b135593bb826d, type: 2}
+    weight: 6
+  - ingredient: {fileID: 11400000, guid: 702a726935e89d947860118717bb2ec0, type: 2}
+    weight: 10
+  - ingredient: {fileID: 11400000, guid: f0b8c082a7e52914ca3fef69648c16b7, type: 2}
+    weight: 10
+  - ingredient: {fileID: 11400000, guid: 6cffb434ba4c0784ea6c2d26988a685e, type: 2}
+    weight: 3
+  qualityColor: 0
