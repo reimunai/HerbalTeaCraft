@@ -8,7 +8,7 @@ public class CalculateSimilarity : MonoBehaviour
 {
     public List<HerbalTeaRecipe> allHerbalTeaRecipe = new List<HerbalTeaRecipe>();
     public HUDControl HUDControl;
-
+    public bool isDone=false;
 
     private List<float> Similaritys = new List<float>();
     private List<Dictionary<Ingredient, float>> standards = new List<Dictionary<Ingredient, float>>();
@@ -16,15 +16,18 @@ public class CalculateSimilarity : MonoBehaviour
     private void Start()
     {
         InitStandard();
+        HUDControl = FindFirstObjectByType<HUDControl>();
     }
 
     private void InitStandard()
     {
         foreach (var HerbalTeaRecipe in allHerbalTeaRecipe)
         {
-            if(HerbalTeaRecipe != null)
-            Debug.Log("添加配方" + HerbalTeaRecipe.herbalTeaName);
-            AddToDictonaryList(HerbalTeaRecipe);
+            if (HerbalTeaRecipe != null)
+            {
+                Debug.Log("添加配方" + HerbalTeaRecipe.herbalTeaName);
+                AddToDictonaryList(HerbalTeaRecipe);
+            }
         }
     }
 
@@ -109,20 +112,29 @@ public class CalculateSimilarity : MonoBehaviour
 
     public void CalculateWithAll(Dictionary<Ingredient, float> target)
     {
-        foreach (var standard in standards)
+        //if (isDone)
         {
-            if (standard != null)
-            { var Similarity = CalculateStandardBasedSimilarity(target, standard);
-                Similaritys.Add(Similarity);
-                Debug.Log(Similarity);
+            if (target.Count == 0)
+            {
+                HUDControl.ShowNothingIn();
+                return;
             }
-        }
-        if (Similaritys.Count > 0)
-        {
-            Debug.Log(allHerbalTeaRecipe[FindMaxIndex(Similaritys)].herbalTeaName);
-            Debug.Log(Similaritys[FindMaxIndex(Similaritys)]);
-            HUDControl.ShowScoreText(Similaritys[FindMaxIndex(Similaritys)]);
-            
+            foreach (var standard in standards)
+            {
+                if (standard != null)
+                {
+                    var Similarity = CalculateStandardBasedSimilarity(target, standard);
+                    Similaritys.Add(Similarity);
+                    Debug.Log(Similarity);
+                }
+            }
+            if (Similaritys.Count > 0)
+            {
+                Debug.Log(allHerbalTeaRecipe[FindMaxIndex(Similaritys)].herbalTeaName);
+                Debug.Log(Similaritys[FindMaxIndex(Similaritys)]);
+                HUDControl.ShowSimlarityNNameText(Similaritys[FindMaxIndex(Similaritys)], allHerbalTeaRecipe[FindMaxIndex(Similaritys)].herbalTeaName);
+
+            }
         }
     }
     private int FindMaxIndex<T>(List<T> list) where T : IComparable<T>

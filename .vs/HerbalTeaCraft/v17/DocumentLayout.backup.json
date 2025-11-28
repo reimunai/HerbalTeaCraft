@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "F:\\vr1111\\HerbalTeaCraft\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|f:\\vr1111\\herbalteacraft\\assets\\scripts\\calculatesimilarity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\ui\\hudcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\hudcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\calculatesimilarity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\calculatesimilarity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\evaluatesocketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|f:\\vr1111\\herbalteacraft\\assets\\scripts\\evaluatesocketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\evaluatesocketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\ui\\hudcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\hudcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\ingredientsandothercls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ingredientsandothercls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\potmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +25,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\potsocketinteractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\potsocketinteractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\windboxcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\windboxcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|F:\\vr1111\\HerbalTeaCraft\\assets\\scripts\\herbsocketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F87575F6-E4D7-5E24-C919-56542387B098}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\herbsocketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,43 +42,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 315,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EvaluateSocketManager.cs",
               "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\EvaluateSocketManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EvaluateSocketManager.cs",
               "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\EvaluateSocketManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\EvaluateSocketManager.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvw8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwB0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T14:52:49.076Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HUDControl.cs",
               "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\UI\\HUDControl.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\HUDControl.cs",
               "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\UI\\HUDControl.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\HUDControl.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAewBIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T15:39:45.015Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CalculateSimilarity.cs",
               "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\CalculateSimilarity.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CalculateSimilarity.cs",
               "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\CalculateSimilarity.cs",
               "RelativeToolTip": "Assets\\Scripts\\CalculateSimilarity.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAADwv34AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAcwIIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T15:47:57.391Z",
               "IsPinned": true,
@@ -78,7 +92,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "WindBoxControl.cs",
+              "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\WindBoxControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WindBoxControl.cs",
+              "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\WindBoxControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WindBoxControl.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T00:48:43.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IngredientsAndOtherCls.cs",
+              "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\IngredientsAndOtherCls.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\IngredientsAndOtherCls.cs",
+              "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\IngredientsAndOtherCls.cs",
+              "RelativeToolTip": "Assets\\Scripts\\IngredientsAndOtherCls.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwDQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T00:47:37.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HerbSocketManager.cs",
+              "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\HerbSocketManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HerbSocketManager.cs",
+              "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\HerbSocketManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HerbSocketManager.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwE8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T17:30:11.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "PotSocketInteractor.cs",
               "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\PotSocketInteractor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PotSocketInteractor.cs",
@@ -86,19 +137,21 @@
               "RelativeToolTip": "Assets\\Scripts\\PotSocketInteractor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T16:04:26.203Z"
+              "WhenOpened": "2025-11-27T16:04:26.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PotManager.cs",
               "DocumentMoniker": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\PotManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PotManager.cs",
               "ToolTip": "F:\\vr1111\\HerbalTeaCraft\\Assets\\Scripts\\PotManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\PotManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T15:00:03.153Z"
+              "WhenOpened": "2025-11-27T15:00:03.153Z",
+              "EditorCaption": ""
             }
           ]
         },
