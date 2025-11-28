@@ -50,7 +50,7 @@ public class ScaleManager : MonoBehaviour
             StartCoroutine(Reable(Self));
             
             potManager.pot.AddIngredient(GetIngredient(), GetWeight());
-            ClearScale();
+            
             return;
             
         }

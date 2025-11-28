@@ -14,14 +14,20 @@ public class HerbalInfoUI : MonoBehaviour
 
     private void Awake()
     {
-        TextEnable();
+        TextDisable();
     }
 
-    public void TextEnable()
+    public void  TextEnable()
     {
-        herbalName.enabled = !herbalName.enabled;
-        info.enabled = !info.enabled;
-        image.enabled = !image.enabled;
+        herbalName.enabled = true;
+        info.enabled = true;
+        image.enabled = true;
+    }
+    public void TextDisable()
+    {
+        herbalName.enabled=false;
+        info.enabled = false;
+        image.enabled = false;
     }
 
     public void SetAndShow(string herbalNameString, string herbalInfo)

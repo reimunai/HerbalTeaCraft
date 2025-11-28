@@ -7,12 +7,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class herbInteractor : XRGrabInteractable
 {
     public string IngredientName;
+    public string IngredientInfo;
     public float weight;
-    public Vector3 originPosition;
-    public Vector3 originRotation;
+    public HUDControl control;
+    private Vector3 originPosition;
+    
     private void Start()
     {
         originPosition = transform.position;
+        control = FindFirstObjectByType<HUDControl>();
     }
     //松手艹自动复位
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -39,5 +42,16 @@ public class herbInteractor : XRGrabInteractable
             }
         }
         transform.position = originPosition;
+    }
+
+    protected override void OnHoverEntered(HoverEnterEventArgs args)
+    {
+        base.OnHoverEntered(args);
+        control.ShowHerbalInfo(IngredientName, IngredientInfo);
+    }
+    protected override void OnHoverExited(HoverExitEventArgs args)
+    {
+        base.OnHoverExited(args);
+        control.HideHerbalInfo();
     }
 }

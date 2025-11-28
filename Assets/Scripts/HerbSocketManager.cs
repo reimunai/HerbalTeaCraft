@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -10,6 +11,7 @@ public class SocketManager : MonoBehaviour
     public List<XRSocketInteractor> sockets;
     public string IngredientName = null;
     public float totalWeight = 0f;
+    public TMP_Text text;
 
     private List<Transform> objInSocket=new List<Transform>();
     private Vector3 orginPosition;
@@ -20,6 +22,7 @@ public class SocketManager : MonoBehaviour
     }
     private void Start()
     {
+        text.text = "0";
         orginPosition = transform.position;
         foreach (var socket in sockets)
         {
@@ -59,7 +62,7 @@ public class SocketManager : MonoBehaviour
                     if (socket.firstInteractableSelected == arg0.interactableObject)
                     {
                         socket.interactionManager.SelectExit(socket, arg0.interactableObject);
-                        Debug.Log("只能称量同种艹");
+                        //Debug.Log("只能称量同种艹");
                     }
                 }
                 
@@ -74,14 +77,13 @@ public class SocketManager : MonoBehaviour
            
             //Debug.Log(herb.IngredientName+" is now");
         }
+        text.text = totalWeight.ToString();
     }
     private void OnRemoved(SelectExitEventArgs arg0)
     {
         var objTransform = arg0.interactableObject.transform;
         var obj = arg0.interactableObject.transform.gameObject;
         var herb = objTransform.GetComponent<herbInteractor>();
-
-        Debug.Log("Unselected");
        
 
         if (objInSocket.Contains(objTransform))
@@ -109,7 +111,7 @@ public class SocketManager : MonoBehaviour
         }
         IngredientName = null;
         totalWeight = 0;
-        Debug.Log("nothing is now");
+        //Debug.Log("nothing is now");
     }
 
     public void ReleaseAllSocket() 

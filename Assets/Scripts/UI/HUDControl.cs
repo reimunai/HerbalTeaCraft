@@ -8,19 +8,25 @@ using UnityEngine;
 public class HUDControl : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TMP_Text text;
+    public TMP_Text Score;
+    public TMP_Text Simlarity;
+    public TMP_Text Name;
+    public TMP_Text NothingInPot;
     public HerbalTeaRecipe startRecipe;
     public HerbalInfoUI herbalInfo;
     public StepGradeUIControl gradeControl;
     private void Awake()
     {
-        text.enabled = false;
+        Score.enabled = false;
+        Simlarity.enabled = false;
+        Name.enabled = false;
+        NothingInPot.enabled = false;
     }
 
     private void Start()
     {
         StartCoroutine(gradeControl.ShowStepGrageUIInfoMultiply(new int[] { 0, 1 }));
-        
+
     }
 
     public void ShowStepGrade(int stepNumber)
@@ -30,15 +36,36 @@ public class HUDControl : MonoBehaviour
 
     public void ShowScoreText(float score)
     {
-        text.enabled = true;
-        text.text = score.ToString(CultureInfo.InvariantCulture);
+        Score.enabled = true;
+        Score.text = score.ToString(CultureInfo.InvariantCulture);
     }
 
     public void HideScoreText()
     {
-        text.enabled = false;
+        Score.enabled = false;
     }
 
+    public void ShowSimlarityNNameText(float simlarity, string name)
+    {
+        Simlarity.enabled = true;
+        Simlarity.text = simlarity.ToString(CultureInfo.InvariantCulture);
+        Name.enabled = true;
+        Name.text = name;
+    }
+    public void HideSimlarityNNameText()
+    {
+        Simlarity.enabled = false;
+        Name.enabled = false;
+    }
+
+    public void ShowNothingIn()
+    {
+        NothingInPot.enabled = true;
+    }
+    public void HideNothinIn()
+    {
+        NothingInPot.enabled = false;
+    }
     public void ShowHerbalInfo(string herbal, string info)
     {
         herbalInfo.SetAndShow(herbal, info);
@@ -46,6 +73,13 @@ public class HUDControl : MonoBehaviour
 
     public void HideHerbalInfo()
     {
-        herbalInfo.TextEnable();
+        herbalInfo.TextDisable();
+    }
+    public void ClearAll()
+    {
+        HideHerbalInfo();
+        HideNothinIn();
+        HideScoreText();
+        HideSimlarityNNameText();
     }
 }
