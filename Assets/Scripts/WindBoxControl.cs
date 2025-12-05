@@ -19,6 +19,7 @@ public class WindBoxControl : MonoBehaviour
     
     [SerializeField] public HUDControl hudControl;
     [Header("相关组件")]
+    [SerializeField] private WindBoxVisual windBoxVisual;
     [SerializeField] private XRSocketInteractor potSocker;
 
     [SerializeField] private WindBoxGrabInteractor windBoxHandle;
@@ -36,7 +37,12 @@ public class WindBoxControl : MonoBehaviour
     public UnityEvent<Color> onPotColorChanged = new UnityEvent<Color>();
     public UnityEvent<float> onPotBoilValueChanged = new UnityEvent<float>();
     public UnityEvent onCookingEnded = new UnityEvent();
-    
+
+    private void Awake()
+    {
+        hudControl = FindObjectOfType<HUDControl>();
+    }
+
     private void Start()
     {
         potSocker.selectEntered?.AddListener(OnPotSockerEntered);
@@ -87,6 +93,7 @@ public class WindBoxControl : MonoBehaviour
             }
 
             potManager.OnStartHeatingBtn();
+            windBoxVisual.OnMakeFire();
         }
         else
         {
@@ -114,7 +121,6 @@ public class WindBoxControl : MonoBehaviour
 
     private void OnPotSockerEixted(SelectExitEventArgs args)
     {
-        Debug.Log(args.interactableObject.transform.name);
         if (potManager)
         {
             if (!isNewPlay)

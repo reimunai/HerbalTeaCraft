@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: "\u6C99\u53C2"
   m_EditorClassIdentifier: 
   ingredientName: "\u6C99\u53C2"
+  ingredientSprite: {fileID: 21300000, guid: 8a70bd7fa37a2c240a32e80a25cb19dc, type: 3}
+  description: "\u6E29\u548C\u6ECB\u6DA6\uFF0C\u64C5\u957F\u6ECB\u517B\u80BA\u80C3\uFF0C\u662F
+    \u201C\u6DA6\u517B\u578B\u201D \u51C9\u8336\u7684\u5E38\u7528\u6750\u6599\u3002"
   tags: []

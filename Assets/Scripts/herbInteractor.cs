@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class herbInteractor : XRGrabInteractable
 {
+    [Header("Herbal Info")]
+    public Ingredient ingredient;
     public string IngredientName;
     public string IngredientInfo;
     public float weight;
@@ -47,7 +49,8 @@ public class herbInteractor : XRGrabInteractable
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
         base.OnHoverEntered(args);
-        control.ShowHerbalInfo(IngredientName, IngredientInfo);
+        //control.ShowHerbalInfo(IngredientName, IngredientInfo);
+        control.ShowHerbalInfo(ingredient);
     }
     protected override void OnHoverExited(HoverExitEventArgs args)
     {

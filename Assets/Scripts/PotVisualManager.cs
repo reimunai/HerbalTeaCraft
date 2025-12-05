@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PotVisualManager : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private VisualEffect _visualEffect;
 
     private void Awake()
     {
-        _particleSystem.Stop();
+        _visualEffect.Stop();
     }
 
     public void OnBoiling()
     {
-        _particleSystem.Play();
+        _visualEffect.Play();
     }
 }

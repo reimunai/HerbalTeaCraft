@@ -25,7 +25,7 @@ public class CalculateSimilarity : MonoBehaviour
         {
             if (HerbalTeaRecipe != null)
             {
-                Debug.Log("Ìí¼ÓÅä·½" + HerbalTeaRecipe.herbalTeaName);
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ä·½" + HerbalTeaRecipe.herbalTeaName);
                 AddToDictonaryList(HerbalTeaRecipe);
             }
         }
@@ -41,28 +41,28 @@ public class CalculateSimilarity : MonoBehaviour
                 if (ingredientNweight.ingredient == null || ingredientNweight.weight <= 0f)
                     continue;
                 temp.Add(ingredientNweight.ingredient, ingredientNweight.weight);
-                Debug.Log("Åä·½ÀïÓÐ "+ingredientNweight.ingredient.ingredientName+" ÖØÁ¿Îª "+ ingredientNweight.weight);
+                Debug.Log("ï¿½ä·½ï¿½ï¿½ï¿½ï¿½ "+ingredientNweight.ingredient.ingredientName+" ï¿½ï¿½ï¿½ï¿½Îª "+ ingredientNweight.weight);
             }
             standards.Add(temp);
-            Debug.Log("StandardsÀïÓÐ Keys: " + string.Join(", ", temp.Keys) + " ºÍ Values: " + string.Join(", ", temp.Values));
+            Debug.Log("Standardsï¿½ï¿½ï¿½ï¿½ Keys: " + string.Join(", ", temp.Keys) + " ï¿½ï¿½ Values: " + string.Join(", ", temp.Values));
         } 
     }
 
 
 
-    //ÆÀ·ÖÏµÍ³
+    //ï¿½ï¿½ï¿½ï¿½ÏµÍ³
     public float CalculateStandardBasedSimilarity(Dictionary<Ingredient, float> target, Dictionary<Ingredient, float> standard)
     {
         if (standard.Count == 0)
         {
-            Debug.Log("Ã»ÓÐÅä·½");
+            Debug.Log("Ã»ï¿½ï¿½ï¿½ä·½");
             return 0f; 
         }
 
         float totalSimilarity = 0f;
         int comparedCount = 0;
 
-        // Ö»±È½Ï±ê×¼×ÖµäÖÐ´æÔÚµÄ²ÄÁÏ
+        // Ö»ï¿½È½Ï±ï¿½×¼ï¿½Öµï¿½ï¿½Ð´ï¿½ï¿½ÚµÄ²ï¿½ï¿½ï¿½
         foreach (var standardItem in standard)
         {
             Ingredient ingredient = standardItem.Key;
@@ -70,25 +70,25 @@ public class CalculateSimilarity : MonoBehaviour
 
             if (target.ContainsKey(ingredient))
             {
-                Debug.Log("TargetÀïÓÐ" + ingredient.name);
+                Debug.Log("Targetï¿½ï¿½ï¿½ï¿½" + ingredient.name);
                 float targetWeight = target[ingredient];
                 float ratio = standardWeight > 0 ? targetWeight / standardWeight : 0f;
 
-                // ¼ÆËãµ¥¸ö²ÄÁÏµÄÏàËÆ¶È£¨±ÈÀýÔ½½Ó½ü1£¬ÏàËÆ¶ÈÔ½¸ß£©
+                // ï¿½ï¿½ï¿½ãµ¥ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½Æ¶È£ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½Ó½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½Ô½ï¿½ß£ï¿½
                 float similarity = 1f - Mathf.Min(1f, Mathf.Abs(1f - ratio));
                 totalSimilarity += similarity;
             }
             else
             {
-                // ±ê×¼²ÄÁÏÔÚÄ¿±êÖÐ²»´æÔÚ£¬ÏàËÆ¶ÈÎª0
-                Debug.Log("TargetÀïÃ»ÓÐ" + ingredient.name);
+                // ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½Îª0
+                Debug.Log("Targetï¿½ï¿½Ã»ï¿½ï¿½" + ingredient.name);
                 totalSimilarity += 0f;
             }
 
             comparedCount++;
         }
 
-        // ³Í·£¶îÍâ²ÄÁÏ
+        // ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         float extraMaterialPenalty = CalculateExtraMaterialPenalty(target, standard);
 
         float baseSimilarity = comparedCount > 0 ? totalSimilarity / comparedCount : 0f;
@@ -99,14 +99,14 @@ public class CalculateSimilarity : MonoBehaviour
 
     private float CalculateExtraMaterialPenalty(Dictionary<Ingredient, float> target, Dictionary<Ingredient, float> standard)
     {
-        // ¼ÆËã¶îÍâ²ÄÁÏµÄÊýÁ¿
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½
         int extraMaterials = target.Keys.Except(standard.Keys).Count();
 
-        if (extraMaterials == 0) return 1f; // Ã»ÓÐ¶îÍâ²ÄÁÏ£¬²»³Í·£
+        if (extraMaterials == 0) return 1f; // Ã»ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½Í·ï¿½
 
-        // ³Í·£ÏµÊý£º¶îÍâ²ÄÁÏÔ½¶à£¬³Í·£Ô½´ó
-        float penalty = Mathf.Pow(0.8f, extraMaterials); // Ã¿¸ö¶îÍâ²ÄÁÏ³ËÒÔ0.8
-        return Mathf.Max(0.1f, penalty); // ×îµÍ±£³Ö10%µÄÏàËÆ¶È
+        // ï¿½Í·ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½à£¬ï¿½Í·ï¿½Ô½ï¿½ï¿½
+        float penalty = Mathf.Pow(0.8f, extraMaterials); // Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï³ï¿½ï¿½ï¿½0.8
+        return Mathf.Max(0.1f, penalty); // ï¿½ï¿½Í±ï¿½ï¿½ï¿½10%ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
     }
 
 

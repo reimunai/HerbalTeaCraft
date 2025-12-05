@@ -22,7 +22,6 @@ public class SocketManager : MonoBehaviour
     }
     private void Start()
     {
-        text.text = "0";
         orginPosition = transform.position;
         foreach (var socket in sockets)
         {
