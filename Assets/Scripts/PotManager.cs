@@ -9,18 +9,19 @@ public class PotManager : MonoBehaviour
     [SerializeField] private Color normalColor;
     [SerializeField] private Color bestColor;
     [SerializeField] private Color overFireColor;
-    
-    private MeshRenderer _meshRenderer;
-    
+    public bool isHatClosed = false;
     public Color visualColor = Color.white;
     public BrewingPot pot;
     public float potTemperatureDecreseSpeed = 5f;
     public WindBoxGrabInteractor windBox;
+    public XRSocketInteractor hatSocket;
+    public XRSocketInteractor scaleSocket;
     
     // Start is called before the first frame update
     private void Start()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+        hatSocket.selectEntered?.AddListener(OnHatSocketEntered);
+        hatSocket.selectExited?.AddListener(OnHatSocketExited);
     }
 
     private void Update()
@@ -57,9 +58,29 @@ public class PotManager : MonoBehaviour
             var t = pot.qualityColor - 1f;
             visualColor = Color.Lerp(bestColor, overFireColor, t);
         }
+    }
+
+    public void OnAddWater(float water)
+    {
+        if (isHatClosed)
+        {
+            return;
+        }
         
-        _meshRenderer.material.color = visualColor;
+        pot.AddWater(water);
     }
     
-    
+    public void OnHatSocketEntered(SelectEnterEventArgs args)
+    {
+        Debug.Log("OnHatSocketEntered");
+        scaleSocket.enabled = false;
+        isHatClosed = true;
+    }
+
+    public void OnHatSocketExited(SelectExitEventArgs args)
+    {
+        Debug.Log("OnHatSocketExited");
+        scaleSocket.enabled = true;
+        isHatClosed = false;
+    }
 }

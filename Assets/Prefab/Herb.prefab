@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7923423403099406937
+--- !u!1 &6430244064349930987
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5476810384584135388}
-  - component: {fileID: 4883991449071828339}
-  - component: {fileID: 8028030519398935610}
-  - component: {fileID: 7068864253450558595}
-  - component: {fileID: 3275575109467763421}
-  - component: {fileID: 4426417212620135594}
+  - component: {fileID: 2202851695310904304}
+  - component: {fileID: 2908114192741966222}
+  - component: {fileID: 6844345399295143892}
+  - component: {fileID: 4624382282425755381}
+  - component: {fileID: 5772796521930107969}
+  - component: {fileID: 5376637446499098541}
   m_Layer: 0
   m_Name: Herb
   m_TagString: Untagged
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5476810384584135388
+--- !u!4 &2202851695310904304
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923423403099406937}
+  m_GameObject: {fileID: 6430244064349930987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.23, y: 3.585, z: 3.456}
@@ -36,13 +36,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4883991449071828339
+--- !u!114 &2908114192741966222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923423403099406937}
+  m_GameObject: {fileID: 6430244064349930987}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e1af39b1ce75bf45a6861f7086918e2, type: 3}
@@ -188,25 +188,26 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  ingredient: {fileID: 11400000, guid: 9a0169f47c587b1489db8b2db045f264, type: 2}
   IngredientName: 111
   IngredientInfo: 
   weight: 10
   control: {fileID: 0}
---- !u!33 &8028030519398935610
+--- !u!33 &6844345399295143892
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923423403099406937}
+  m_GameObject: {fileID: 6430244064349930987}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7068864253450558595
+--- !u!23 &4624382282425755381
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923423403099406937}
+  m_GameObject: {fileID: 6430244064349930987}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -242,13 +243,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3275575109467763421
+--- !u!65 &5772796521930107969
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923423403099406937}
+  m_GameObject: {fileID: 6430244064349930987}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -263,13 +264,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &4426417212620135594
+--- !u!54 &5376637446499098541
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923423403099406937}
+  m_GameObject: {fileID: 6430244064349930987}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0

@@ -71,6 +71,10 @@ public class HUDControl : MonoBehaviour
         herbalInfo.SetAndShow(herbal, info);
     }
 
+    public void ShowHerbalInfo(Ingredient ingredient)
+    {
+        herbalInfo.SetAndShow(ingredient);
+    }
     public void HideHerbalInfo()
     {
         herbalInfo.TextDisable();

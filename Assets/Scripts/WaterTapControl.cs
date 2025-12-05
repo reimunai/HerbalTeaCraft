@@ -25,6 +25,12 @@ public class WaterTapControl : MonoBehaviour
     [SerializeField]private float waterFlowSpeed = 0.05f;
     
     [SerializeField] public UnityEvent<float> OnWaterAdd = new UnityEvent<float>();
+
+    private void Awake()
+    {
+        hudControl = FindObjectOfType<HUDControl>();
+    }
+
     void Start()
     {
         potSocker.selectEntered?.AddListener(OnPotSockerEntered);
@@ -50,7 +56,7 @@ public class WaterTapControl : MonoBehaviour
         {
             if (potManager)
             {
-                potManager.pot.AddWater(waterFlowSpeed * Time.deltaTime);
+                potManager.OnAddWater(waterFlowSpeed * Time.deltaTime);
                 OnWaterAdd?.Invoke(potManager.pot.waterLevel);
             }
         }
