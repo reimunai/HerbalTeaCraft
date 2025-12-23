@@ -15,13 +15,14 @@ public class WindBoxVisual : MonoBehaviour
     public VisualEffect fireVFX;
     public Light fireLight;
     public bool isFiring = false;
-    
+
     public float fireFlashSpeed = 5f;
     public float fireIntensity = 5f;
     private void Start()
     {
         fireVFX.Stop();
         fireLight.enabled = false;
+        
     }
 
     private void Update()
@@ -38,6 +39,4 @@ public class WindBoxVisual : MonoBehaviour
         fireLight.enabled = true;
         isFiring = true;
     }
-
-
 }

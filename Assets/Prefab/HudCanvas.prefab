@@ -1149,7 +1149,7 @@ MonoBehaviour:
   text: {fileID: 2675926604032542784}
   aliveTimePerChar: 0.2
   stepsGradeInfo:
-  - "\u770B\u914D\u65B9 \u57C3\u91CC\u514B\u89E3\u653E\u7ACB\u523B\u642D\u8857\u574A\u7ACB\u523B\u89E3\u653E\u8DEF\u53E3\u7684\u6492\u5A07"
+  - "\u770B\u914D\u65B9"
   - "2\u6293\u836F\u6750"
   - "3\u79F0\u91CD"
   - "4\u5012\u8FDB\u9505\u91CC"
