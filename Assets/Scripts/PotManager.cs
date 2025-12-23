@@ -16,8 +16,14 @@ public class PotManager : MonoBehaviour
     public WindBoxGrabInteractor windBox;
     public XRSocketInteractor hatSocket;
     public XRSocketInteractor scaleSocket;
+    [SerializeField]private PotVisualManager potVisualManager;
     
     // Start is called before the first frame update
+    private void Awake()
+    {
+        potVisualManager = GetComponent<PotVisualManager>();
+    }
+
     private void Start()
     {
         hatSocket.selectEntered?.AddListener(OnHatSocketEntered);
@@ -27,6 +33,7 @@ public class PotManager : MonoBehaviour
     private void Update()
     {
         pot.UpdateQualityColor(Time.deltaTime);
+        potVisualManager.ChangeMaterialColor(visualColor);
         if (pot.isHeating)
         {
             pot.AdjustTemperature(pot.temperature - potTemperatureDecreseSpeed * Time.deltaTime + windBox.pullSpeed * 0.1f);
