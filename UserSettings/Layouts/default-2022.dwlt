@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 37256
+  controlID: 18
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 37257
+  controlID: 19
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 37258
+  controlID: 20
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 37336
+  controlID: 82
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -321,8 +321,8 @@ MonoBehaviour:
     y: 0
     width: 259
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -349,8 +349,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 19
+    x: -1920
+    y: 73
     width: 1323
     height: 651
   m_SerializedDataModeController:
@@ -2031,9 +2031,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.5825744, y: 3.227976, z: 1.5367756}
+    m_Target: {x: 5.1717377, y: 3.9014883, z: 1.4453496}
     speed: 2
-    m_Value: {x: 4.5825744, y: 3.227976, z: 1.5367756}
+    m_Value: {x: 5.1717377, y: 3.9014883, z: 1.4453496}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2079,9 +2079,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.090404525, y: 0.82940495, z: -0.14066549, w: 0.5330437}
+    m_Target: {x: -0.10587579, y: -0.8442662, z: 0.18127353, w: -0.49310836}
     speed: 2
-    m_Value: {x: 0.090615064, y: 0.8286012, z: -0.14052917, w: 0.5342851}
+    m_Value: {x: -0.10661474, y: -0.84398866, z: 0.18253873, w: -0.4929463}
   m_Size:
     m_Target: 0.4448701
     speed: 2
@@ -2147,10 +2147,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 87738}
-      m_SelectedIDs: d03afdff
-      m_LastClickedID: -181552
-      m_ExpandedIDs: 5262fcffc092fcffc69afcff28acfcff9238fdffb638fdfff238fdff203bfdffee3bfdff003efdfffa71fdffe286feffe686feffda93feffdc93feff029cfeffb89cfeff8a9dfeffaabcffff02ceffff1cd1ffff30d4ffffacfaffffa49900009a7e02007c9f02001a47040090470400fc670400
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 1e820000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 18fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2255,7 +2255,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Font
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2263,16 +2263,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Font
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\GitHub\HerbalTeaCraft
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: daa60000
-    m_LastClickedID: 42714
-    m_ExpandedIDs: 00000000b0a60000e6a60000e8a60000f6a60000faa60000c8d2030002d3030000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: ca210100
+    m_LastClickedID: 74186
+    m_ExpandedIDs: 00000000ca210100cc210100ce210100d0210100d2210100d421010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2300,7 +2300,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b0a60000e6a60000e8a60000f6a60000faa60000c8d2030002d3030000ca9a3b
+    m_ExpandedIDs: 00000000ca210100cc210100ce210100d0210100d2210100d4210100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2352,7 +2352,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 121}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
