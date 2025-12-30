@@ -76,7 +76,7 @@ public class SocketManager : MonoBehaviour
            
             //Debug.Log(herb.IngredientName+" is now");
         }
-        text.text = totalWeight.ToString();
+        text.text = totalWeight.ToString()+"g";
     }
     private void OnRemoved(SelectExitEventArgs arg0)
     {
@@ -91,7 +91,7 @@ public class SocketManager : MonoBehaviour
             
             objTransform.GetComponent<Collider>().enabled = true;
             totalWeight -= herb.weight;
-            
+            text.text = totalWeight.ToString() + "g";
         }
         //Debug.Log(objInSocket.Count + " out times ");
         if (objInSocket.Count >= 1)
@@ -110,6 +110,7 @@ public class SocketManager : MonoBehaviour
         }
         IngredientName = null;
         totalWeight = 0;
+        text.text = totalWeight.ToString() + "g";
         //Debug.Log("nothing is now");
     }
 

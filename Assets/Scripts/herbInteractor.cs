@@ -18,6 +18,7 @@ public class herbInteractor : XRGrabInteractable
     {
         originPosition = transform.position;
         control = FindFirstObjectByType<HUDControl>();
+        IngredientName = ingredient.ingredientName;
     }
     //松手艹自动复位
     protected override void OnSelectExited(SelectExitEventArgs args)

@@ -16,10 +16,16 @@ public class EvaluateSocketManager : MonoBehaviour
     private float Score;
     private void Start()
     {
+        socket.selectExited.AddListener(OnExited);
         socket.selectEntered.AddListener(OnSelected);
         pot = potManager.pot;
         Score = pot.qualityColor;
         control = FindFirstObjectByType<HUDControl>();
+    }
+
+    private void OnExited(SelectExitEventArgs arg0)
+    {
+        control.ClearAll();
     }
 
     private void OnSelected(SelectEnterEventArgs arg0)

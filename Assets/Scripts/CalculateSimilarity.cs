@@ -123,6 +123,19 @@ public class CalculateSimilarity : MonoBehaviour
             {
                 if (standard != null)
                 {
+                    int index = 0;
+                    foreach (var kvp in target)
+                    {
+                        if (kvp.Key == null)
+                        {
+                            Debug.Log($"[{index}] Key: null, Value: {kvp.Value}");
+                        }
+                        else
+                        {
+                            Debug.Log($"[{index}] Key: {kvp.Key.ingredientName} (ID: {kvp.Key.GetInstanceID()}), Value: {kvp.Value}");
+                        }
+                        index++;
+                    }
                     var Similarity = CalculateStandardBasedSimilarity(target, standard);
                     Similaritys.Add(Similarity);
                     Debug.Log(Similarity);
