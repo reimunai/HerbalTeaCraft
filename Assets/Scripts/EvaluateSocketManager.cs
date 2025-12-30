@@ -18,8 +18,7 @@ public class EvaluateSocketManager : MonoBehaviour
     {
         socket.selectExited.AddListener(OnExited);
         socket.selectEntered.AddListener(OnSelected);
-        pot = potManager.pot;
-        Score = pot.qualityColor;
+
         control = FindFirstObjectByType<HUDControl>();
     }
 
@@ -34,7 +33,9 @@ public class EvaluateSocketManager : MonoBehaviour
         {
             control.ClearAll();
 
-            control.ShowScoreText((1-Math.Abs(1 - Score)) * 100);
+            pot = potManager.pot;
+            Score = pot.qualityColor;
+            control.ShowScoreText((1f-Math.Abs(1f - Score)) * 100);
              
             calculateSimilarity.CalculateWithAll(pot.ingredientsAndWeighs);
         }
